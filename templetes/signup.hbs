@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign Up</title>
+    <link rel="stylesheet" href="/csss/loginorsignup.css">
+</head>
+
+<body>
+
+    <div class="mainbody">
+
+        <h1>SignUp: </h1>
+        <div class="flex">
+            <label>
+                <form action="/signup" method="post" class="form">
+
+                    <input class="input" type="text" name="fname" placeholder="FName"><br>
+                    <input class="input" type="text" name="lname" placeholder="LName"><br>
+                    <input class="input" type="text" name="email" placeholder="Email"><br>
+                    <input class="input" type="date" id="DOB" name="dob"><br>
+
+
+                    <div class="radiocontener">
+
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label class="lab">MALE</label>
+
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label class="lab">FEMALE</label>
+
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label class="lab">OTHER</label>
+
+                    </div>
+
+                    <div class="mid"></div>
+
+                    <label class="labtab">PROFESSION: </label>
+                    <input class="input" list="text" name="profession">
+                    <br>
+                    <div class="mid"></div>
+
+                    <input class="input" type="password" name="password" placeholder="Password"><br>
+                    <input class="input" type="password" name="passwordCheck" placeholder="PasswordCheck">
+
+                    <div class="mid"></div>
+
+                    <input type="number" class="input" id="imageNumber" name="profileimg"
+                        placeholder="Enter a Avatar number" title="Enter A Avatra Number form 0-6">
+
+                    <div id="imageSelection">
+                       
+                        <img class="imagecontener" src="/img/profile/p1.png" alt="Image 1" data-number="1"
+                            title="Avatar No. '1'">
+                        <img class="imagecontener" src="/img/profile/p2.png" alt="Image 2" data-number="2"
+                            title="Avatar No. '2'">
+                        <img class="imagecontener" src="/img/profile/p3.png" alt="Image 3" data-number="3"
+                            title="Avatar No. '3'">
+                        <img class="imagecontener" src="/img/profile/p4.png" alt="Image 4" data-number="4"
+                            title="Avatar No. '4'">
+                        <img class="imagecontener" src="/img/profile/p5.png" alt="Image 5" data-number="5"
+                            title="Avatar No. '5'">
+                        <img class="imagecontener" src="/img/profile/p6.png" alt="Image 6" data-number="6"
+                            style="border-radius: 100px;" title="Avatar No. '6'">
+
+                    </div>
+                    <div class="mid"></div>
+                    <h1 style="text-align: center;"> Information for Diet Plan</h1>
+                    <div class="mid"></div>
+                    <div>
+
+                        <input class="input" type="number" name="weight"
+                            placeholder="weight shoud be in KG(kilogram)"><br>
+                        <input class="input" type="number" name="height" placeholder="Height shoud be in M(meater)"
+                            step="0.1"><br>
+                        <input class="input" type="number" name="age" placeholder="age"><br>
+
+
+                        <div class="mid"></div>
+                        <input class="input" type="text" name="bloodgroup" placeholder="bloodGroup"><br>
+
+                        <input class="input" type="text" name="diseases" placeholder="diseases"><br>
+                        <input class="input" type="text" name="allergies" placeholder="allergies"><br>
+
+                        <div class="mid"></div>
+
+                        <div class="dietplain">
+
+
+                            <div class="radiocontener">
+
+                                <input type="radio" id="veg" name="eattinghab" value="veg">
+                                <label class="lab">Vegetrian</label>
+
+                                <input type="radio" id="nonveg" name="eattinghab" value="nonveg">
+                                <label class="lab">Non-Vegetrian</label>
+                                {{!-- <input type="radio" id="Vegan" name="eattinghab" value="vehan">
+                                <label class="lab">Vegans</label><br> --}}
+
+                            </div>
+                            <div class="mid"></div>
+
+                            <div class="radiocontener">
+
+                                <input type="radio" id="gain" name="goalwig" value="gain">
+                                <label class="lab">Gain </label>
+                                
+                                <input type="radio" id="loss" name="goalwig" value="loss">
+                                <label class="lab">Loss </label>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <input class="login-button" type="submit" name="" id="" value="SUBMIT">
+                    </div>
+
+                </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

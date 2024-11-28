@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/csss/profile.css">
+  <link rel="stylesheet" href="/csss/navbar.css">
+  <title>profile</title>
+
+</head>
+
+<body>
+
+  <section>
+    <nav>
+
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a id="dietplain" href=" ">Diet plain</a></li>
+      
+        <li><a href="/workout.html">Workout</a></li>
+        
+      </ul>
+    </nav>
+
+
+  </section>
+  <section class="mainbody ">
+    <div class="left-div">
+
+      <img id="selectedImage" src="" alt="Selected Image">
+    </div>
+    <div class="right-div">
+      <div>
+        <img id="emaillogo" src="/img/profile/maillogo.jpg" alt="">
+        <h1 id="email"></h1>
+      </div><br>
+      <div>
+
+        <span><b>UserName:</b></span>
+        <p id="flname"></p>
+
+      </div><br>
+      <span><b>profession:</b></span>
+      <p id="profession"></p><br>
+
+      <span><b>Gender:</b></span>
+      <p id="gender"></p>
+
+    </div>
+
+    <div class="right-div">
+      <span><b>bmi:</b></span>
+      <p id="bmi" ></p><br>
+      <span><b>weight:</b></span>
+      <p id="weight"></p><br>
+
+      <span><b>height:</b></span>
+      <p id="height"></p><br>
+
+      <span><b>age:</b></span>
+      <p id="age"></p><br>
+
+      <span><b>bloodGroup:</b></span>
+      <p id="bloodgroup"></p><br>
+
+      <span><b>diseases:</b></span>
+      <p id="diseases"></p><br>
+
+      <span><b>allergies:</b></span>
+      <p id="allergies"></p><br>
+
+      <button id="logoutButton">log out</button>
+    </div>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Fetch user profile information from local storage
+        const email = localStorage.getItem('email');
+        const fname = localStorage.getItem('fname');
+        const lname = localStorage.getItem('lname');
+        const profession = localStorage.getItem('profession');
+        const gender = localStorage.getItem('gender');
+        
+        const weight = localStorage.getItem('weight');
+        const height = localStorage.getItem('height');
+        const age = localStorage.getItem('age');
+        const bloodgroup = localStorage.getItem('bloodgroup');
+        const diseases = localStorage.getItem('diseases');
+        const allergies = localStorage.getItem('allergies');
+
+        let w = parseFloat(weight);
+        let h = parseFloat(height);
+        const bmiall =( w / (h * h)).toString();
+        const bmi=bmiall.substring(0,5);
+        // Display data in <h1> tag
+          document.getElementById('bmi').innerText = `${bmi} KG/M²`;
+        document.getElementById('email').innerText = `${email}`;
+        document.getElementById('flname').innerText = `@${fname}${lname}_HealthMe`;
+        document.getElementById('gender').innerText = `${gender}`;
+        document.getElementById('profession').innerText = `${profession}`;
+
+
+        document.getElementById('weight').innerText = `${weight}`;
+        document.getElementById('height').innerText = `${height}`;
+        document.getElementById('age').innerText = `${age}`;
+        document.getElementById('bloodgroup').innerText = `${bloodgroup}`;
+        document.getElementById('diseases').innerText = `${diseases}`;
+        document.getElementById('allergies').innerText = `${allergies}`;
+
+
+        // Fetch the number representing the profile image from local storage
+        const profileImgNumber = localStorage.getItem('profileimg');
+
+        // Map the profile image number to the corresponding image source
+        const imageSources = {
+          '1': '/img/profile/p1.png',
+          '2': '/img/profile/p2.png',
+          '3': '/img/profile/p3.png',
+          '4': '/img/profile/p4.png',
+          '5': '/img/profile/p5.png',
+          '6': '/img/profile/p6.png',
+          // Add more mappings as needed
+        };
+
+        // Set the selected image as the profile image
+        const selectedImageSrc = imageSources[profileImgNumber];
+        document.getElementById('selectedImage').src = selectedImageSrc || '';
+
+
+
+   //Diet plain for webside
+
+
+   const eatinghabll = localStorage.getItem('eattinghab');
+        const goalwigll = localStorage.getItem('goalwig');
+
+        const check1 = {
+          'veg': 0,
+          'nonveg': 1
+
+        };
+        const check2 = {
+          'gain': 0,
+          'loss': 1
+
+        };
+        const t1 = check1[eatinghabll];
+        const t2 = check2[goalwigll];
+
+
+
+        document.getElementById('dietplain').addEventListener('click', () => {
+          if (t1 === 0 && t2 === 0) {
+            document.getElementById("dietplain").href = "/dietplain/d00.html";
+          }
+          else if (t1 === 0 && t2 === 1) {
+            document.getElementById("dietplain").href = "/dietplain/d01.html";
+          }
+          else if (t1 === 1 && t2 === 0) {
+            document.getElementById("dietplain").href = "/dietplain/d10.html";
+          }
+          else if (t1 === 1 && t2 === 1) {
+            document.getElementById("dietplain").href = "/dietplain/d11.html";
+          }
+        });
+
+
+
+
+
+
+
+        // Logout functionality
+        document.getElementById('logoutButton').addEventListener('click', () => {
+          // Clear local storage
+          localStorage.removeItem('email');
+          localStorage.removeItem('fname');
+          localStorage.removeItem('lname');
+          localStorage.removeItem('gender');
+          localStorage.removeItem('profession');
+          localStorage.removeItem('profileimg');
+
+          localStorage.removeItem('weight');
+          localStorage.removeItem('height');
+          localStorage.removeItem('age');
+          localStorage.removeItem('bloodgroup');
+          localStorage.removeItem('diseases');
+          localStorage.removeItem('allergies');
+
+          // Redirect to the index page
+          window.location.href = "/index.html"; // Change the path accordingly
+        });
+      });
+
+
+
+    </script>
+</body>
+
+</html>

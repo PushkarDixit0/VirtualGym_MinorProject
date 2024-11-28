@@ -1,0 +1,26 @@
+
+.mainbody{
+    max-width: 60%;
+    margin:0 20%;
+    font-size: 210%;
+}
+
+h1{
+
+    font-size: 300%;
+    text-align: center;
+    padding: 2% 15%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 50px;
+}
+th {
+    background-color: #f2f2f2;
+}

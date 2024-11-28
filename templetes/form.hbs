@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .boxcont {
+
+         max-width: 50%;
+         margin: 2% auto;
+         padding: 5% 0;
+
+      }
+
+      .input {
+         margin: 1%;
+         padding: .2%;
+      }
+   </style>
+</head>
+
+<body>
+   <h1>Enter Food Data 🤞👍👍</h1>
+   <div class="boxcont">
+      <form action="/form" method="post">
+
+         <label for="">Food Name</label><input class="input" type="text" name="foodname" placeholder="FoodName"><br>
+
+         <label for="">proteins</label><input class="input" type="number" name="proteins" placeholder="proteins" step="0.1"><br>
+         <label for="">Carbs</label><input class="input" type="number" name="carbs" placeholder="carbs" step="0.1"><br>
+         <label for="">Fats</label><input class="input" type="number" name="fats" placeholder="Fats" step="0.1"><br>
+         <label for="">Fiber</label><input class="input" type="number" name="fiber" placeholder="Fiber" step="0.1"><br>
+         <input type="submit">
+
+      </form>
+   </div>
+</body>
+
+</html>

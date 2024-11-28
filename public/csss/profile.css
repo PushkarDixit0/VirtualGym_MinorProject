@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+.mainbody{
+    max-width: 100%;
+    
+    position: relative;
+    padding: 3%;
+    display: flex;
+}
+
+#selectedImage{
+    width: 60%;
+height: 50%;
+}
+
+span{
+    font-size: 130%;
+    font-weight: 400;
+   
+}
+p{
+    font-size: 110%;
+}
+
+#emaillogo{
+    width: 10%;
+    height: 10%;
+}
+
+
+.left-div, .right-div {
+    width: 100%; 
+    padding: 5px;
+    box-sizing: border-box; 
+    border: 2px solid white; 
+    font-size: 35px;
+  
+}
+
+#logoutButton{
+    background-color: #a0afea;
+    font-size: 80%;
+    border-radius: 30%;
+    width: 30%;
+height: 10%;
+}
+
+#logoutButton:hover{
+    background-color:  #2650f7;
+}
+
+
+
+
+
+
+
+
+

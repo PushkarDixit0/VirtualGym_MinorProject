@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heath Me</title>
+    <link rel="stylesheet" href="/csss/navbar.css">
+    <link rel="stylesheet" href="csss/framefirst.css">
+</head>
+
+<body>
+    <nav>
+
+
+        <ul class="nav-links">
+
+            <li><a href="#aboutus">About US</a></li>
+            <li><a href="#services">servises</a></li>            
+            <li><a href="#contactus">contact us</a></li>
+            <li><a id="dietplain" href=" ">Diet plain</a></li>
+            <li><a href="/workout.html">Workout</a></li>
+            <li><a href="bot">Bot</a></li>
+            <li><a href="/profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="slides">
+        <div class="slideshow-container">
+
+            <div class="mySlides ">
+
+                <img src="img/sideshoow/1slide.webp" style="width: 100%;">
+
+            </div>
+
+            <div class="mySlides ">
+
+                <img src="img/sideshoow/2slide.jpg" style="width: 100%;">
+
+            </div>
+
+            <div class="mySlides ">
+
+                <img src="img/sideshoow/3slide.jpg" style="width: 100%;">
+
+            </div><br>
+
+    </section>
+
+
+    <section class="frametext">
+        <h1 id="aboutus">About US</h1>
+
+        <p>
+            Health Me is your ultimate destination for holistic wellness, providing a comprehensive platform where
+            individuals can access credible information, resources, and tools to empower themselves on their journey
+            towards optimal health. With a focus on fostering a balanced lifestyle encompassing physical, mental, and
+            emotional well-being, Health Me offers expert advice, evidence-based articles, personalized health
+            assessments, and a supportive community to guide users in making informed decisions about their health.
+            Whether you're seeking fitness tips, nutritional guidance, mental health support, or simply looking to
+            cultivate a healthier lifestyle, Health Me is here to inspire and facilitate positive transformations,
+            helping you thrive in every aspect of your life.
+        </p>
+
+
+        <h1 id="services">Services</h1>
+
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis exercitationem voluptatem, porro odio
+            minima vero doloremque neque similique illo esse molestias quam eos repudiandae? Quia itaque ipsam
+            distinctio inventore provident vel velit sed voluptate aspernatur architecto, rerum, ducimus reiciendis
+            sequi. Sunt repellat officiis voluptatum ea maxime nemo, delectus deleniti ipsam, quaerat animi ab
+            dolores, id veniam adipisci autem non. Quasi at blanditiis impedit optio molestiae. Eum debitis
+            doloribus, impedit iste excepturi cum aliquam nemo eveniet voluptates asperiores voluptatibus, pariatur
+            corporis, fugiat odio harum cumque. Voluptate repudiandae dignissimos, suscipit, eos nobis laudantium
+            ratione saepe labore quae, obcaecati cupiditate amet tempore rerum!
+        </p>
+    </section>
+    <footer>
+
+
+        <div class="left-div">
+            <h3>Over Focess</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero recusandae quisquam nemo dolorem
+                voluptatum rem eius hic deserunt tempora?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ratione aspernatur culpa, harum voluptas enim quos facere maxime amet ullam nobis numquam, unde in
+                laudantium dolores, odio a minima quidem. Similique!
+            </p>
+
+        </div>
+
+        <div class="mid">
+            
+        </div>
+
+        <div class="right-div">
+
+            <h3 id="contactus">Contact us</h3>
+            <div >
+                <img src="/img/sideshoow/icons8-facebook-48.png" alt=""> <a class="logoinfo" href="https://www.facebook.com/">Healthme</a> <br><br>
+                <img src="/img/sideshoow/icons8-instagram-48.png" alt=""> <a class="logoinfo" href="https://www.instagram.com/">health_me</a> <br><br>
+                <img src="/img/sideshoow/icons8-whatsapp-48.png" alt=""> <a class="logoinfo" href="https://www.whatsapp.com/">+91-7689-95-6589</a>
+
+
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </footer>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].className = slides[i].className.replace(" active", "");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+
+            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+
+
+
+          //WORKOUT PART for webside
+
+
+          const eatinghabll = localStorage.getItem('eattinghab');
+        const goalwigll = localStorage.getItem('goalwig');
+
+        const check1 = {
+          'veg': 0,
+          'nonveg': 1
+
+        };
+        const check2 = {
+          'gain': 0,
+          'loss': 1
+
+        };
+        const t1 = check1[eatinghabll];
+        const t2 = check2[goalwigll];
+
+
+
+
+        document.getElementById('dietplain').addEventListener('click', () => {
+          if (t1 === 0 && t2 === 0) {
+            document.getElementById("dietplain").href = "/dietplain/d00.html";
+          }
+          else if (t1 === 0 && t2 === 1) {
+            document.getElementById("dietplain").href = "/dietplain/d01.html";
+          }
+          else if (t1 === 1 && t2 === 0) {
+            document.getElementById("dietplain").href = "/dietplain/d10.html";
+          }
+          else if (t1 === 1 && t2 === 1) {
+            document.getElementById("dietplain").href = "/dietplain/d11.html";
+          }
+        });
+
+    </script>
+</body>
+
+</html>

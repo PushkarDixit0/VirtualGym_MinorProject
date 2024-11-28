@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/csss/navbar.css">
+
+    <style>
+        main {
+
+
+            position: relative;
+            left: 35%;
+            
+        }
+
+        .box {
+            padding: 5% 0;
+            
+
+        }
+
+        b{
+            font-size: 250%;
+            margin:0 2% ;
+             text-transform: uppercase;
+
+        }
+
+        p {
+         text-transform: uppercase;
+            font-size: 250%;
+            display: inline;
+
+        }
+        .intexter{
+            padding:2% 0;
+            
+           
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <nav>
+
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                {{!-- <li><a href="#" id="dietPlainLink">Diet Plain</a></li> --}}
+
+
+                <li><a id="dietplain" href=" ">Diet plain</a></li>
+                <li><a href="/workout.html">Workout</a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+            <div class="box">
+                <div class="intexter"><b>Food Name:</b>
+                    <p id="foodname"></p>
+                </div class="intexter"><br>
+                <div class="intexter"><b>proteins:</b>
+                    <p id="proteins"></p>
+                </div class="intexter"><br>
+                <div class="intexter"><b>carbs:</b>
+                    <p id="carbs"></p>
+                </div class="intexter"><br>
+                <div class="intexter"><b>fats:</b>
+                    <p id="fats"></p>
+                </div class="intexter"><br>
+                <div class="intexter"><b>fiber:</b>
+                    <p id="fiber"></p>
+                </div class="intexter"><br>
+
+            </div>
+        </main>
+    </section>
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+
+            const queryParams = new URLSearchParams(window.location.search);
+            const foodname = queryParams.get('foodname');
+            const proteins = queryParams.get('proteins');
+            const carbs = queryParams.get('carbs');
+            const fats = queryParams.get('fats');
+            const fiber = queryParams.get('fiber');
+
+
+            // Store values in local storage
+
+            localStorage.setItem('foodname', foodname);
+            localStorage.setItem('proteins', proteins);
+            localStorage.setItem('carbs', carbs);
+            localStorage.setItem('fats', fats);
+            localStorage.setItem('fiber', fiber);
+
+            // Display data in <h1> tag
+
+            document.getElementById('foodname').innerText = `${foodname}`;
+            document.getElementById('proteins').innerText = `${proteins}`;
+            document.getElementById('carbs').innerText = `${carbs}`;
+            document.getElementById('fats').innerText = `${fats}`;
+            document.getElementById('fiber').innerText = `${fiber}`;
+
+
+
+
+        //Diet plain for webside
+
+
+        const eatinghabll = localStorage.getItem('eattinghab');
+        const goalwigll = localStorage.getItem('goalwig');
+
+        const check1 = {
+          'veg': 0,
+          'nonveg': 1
+
+        };
+        const check2 = {
+          'gain': 0,
+          'loss': 1
+
+        };
+        const t1 = check1[eatinghabll];
+        const t2 = check2[goalwigll];
+
+
+
+        document.getElementById('dietplain').addEventListener('click', () => {
+          if (t1 === 0 && t2 === 0) {
+            document.getElementById("dietplain").href = "/dietplain/d00.html";
+          }
+          else if (t1 === 0 && t2 === 1) {
+            document.getElementById("dietplain").href = "/dietplain/d01.html";
+          }
+          else if (t1 === 1 && t2 === 0) {
+            document.getElementById("dietplain").href = "/dietplain/d10.html";
+          }
+          else if (t1 === 1 && t2 === 1) {
+            document.getElementById("dietplain").href = "/dietplain/d11.html";
+          }
+        });
+
+        })
+        
+
+    </script>
+</body>
+
+</html>
